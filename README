@@ -18,6 +18,8 @@ EID-TestCollatz.tmp: EID-TestCollatz
 	cat EID-TestCollatz.tmp
 ```
 
+* Add your new make target to the `all` target.
+
 * Add the requested files (EID-RunCollatz.in, EID-RunCollatz.out, EID-TestCollatz.c++, EID-TestCollatz.out) to this folder.
 
 * Commit and push your code to your fork.

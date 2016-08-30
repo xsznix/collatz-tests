@@ -48,6 +48,8 @@ else                                                                 # UTCS
     CLANG-FORMAT := clang-format-3.8
 endif
 
+all: xz4493-TestCollatz.tmp
+
 xz4493-TestCollatz: xz4493-TestCollatz.c++ ../Collatz.h ../Collatz.c++
 	$(CXX) $(CXXFLAGS) $(GCOVFLAGS) ../Collatz.c++ xz4493-TestCollatz.c++ -o xz4493-TestCollatz $(LDFLAGS)
 ifneq ($(shell uname -p), unknown)                                    # Docker
