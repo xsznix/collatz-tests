@@ -48,7 +48,11 @@ else                                                                 # UTCS
     CLANG-FORMAT := clang-format-3.8
 endif
 
-all: xz4493-TestCollatz.tmp
+all: xz4493-RunCollatz.tmp xz4493-TestCollatz.tmp
+
+xz4493-RunCollatz.tmp: ../RunCollatz
+	../RunCollatz < xz4493-RunCollatz.in > xz4493-RunCollatz.tmp
+	diff xz4493-RunCollatz.tmp xz4493-RunCollatz.out
 
 xz4493-TestCollatz: xz4493-TestCollatz.c++ ../Collatz.h ../Collatz.c++
 	$(CXX) $(CXXFLAGS) $(GCOVFLAGS) ../Collatz.c++ xz4493-TestCollatz.c++ -o xz4493-TestCollatz $(LDFLAGS)

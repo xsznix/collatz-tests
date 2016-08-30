@@ -5,6 +5,10 @@
 * Add these lines to the Makefile, replacing "EID" with your eid:
 
 ```
+EID-RunCollatz.tmp: ../RunCollatz
+	../RunCollatz < EID-RunCollatz.in > EID-RunCollatz.tmp
+	diff EID-RunCollatz.tmp EID-RunCollatz.out
+
 EID-TestCollatz: EID-TestCollatz.c++ ../Collatz.h ../Collatz.c++
 	$(CXX) $(CXXFLAGS) $(GCOVFLAGS) ../Collatz.c++ EID-TestCollatz.c++ -o EID-TestCollatz $(LDFLAGS)
 ifneq ($(shell uname -p), unknown)                                    # Docker
@@ -18,7 +22,7 @@ EID-TestCollatz.tmp: EID-TestCollatz
 	cat EID-TestCollatz.tmp
 ```
 
-* Add your new make target to the `all` target.
+* Add your new make targets (`EID-RunCollatz.tmp EID-TestCollatz.tmp`) to the `all` target.
 
 * Add the requested files (EID-RunCollatz.in, EID-RunCollatz.out, EID-TestCollatz.c++, EID-TestCollatz.out) to this folder.
 
