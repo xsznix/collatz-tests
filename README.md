@@ -31,3 +31,17 @@ EID-TestCollatz.tmp: EID-TestCollatz
 * Submit a pull request upstream to the main test repo.
 
 * Edit these instructions and make them better!
+
+## Testing your code
+
+In this directory, run:
+
+```
+make
+```
+
+Alternatively, to run a single person's test. run:
+
+```
+make EID-RunCollatz.tmp EID-TestCollatz.tmp
+```
