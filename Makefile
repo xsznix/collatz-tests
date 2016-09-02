@@ -53,7 +53,7 @@ all: xz4493-RunCollatz.tmp xz4493-TestCollatz.tmp
 clean:
 	rm -f *.gcov *.gcda *.gcno *.tmp *-RunCollatz.tmp *-TestCollatz *-TestCollatz.tmp
 
-xz4493-RunCollatz.tmp: ../RunCollatz
+xz4493-RunCollatz.tmp: ../RunCollatz xz4493-RunCollatz.in
 	../RunCollatz < xz4493-RunCollatz.in > xz4493-RunCollatz.tmp
 	diff xz4493-RunCollatz.tmp xz4493-RunCollatz.out
 

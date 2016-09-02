@@ -5,7 +5,7 @@
 * Add these lines to the Makefile, replacing "EID" with your eid:
 
 ```
-EID-RunCollatz.tmp: ../RunCollatz
+EID-RunCollatz.tmp: ../RunCollatz EID-RunCollatz.in
 	../RunCollatz < EID-RunCollatz.in > EID-RunCollatz.tmp
 	diff EID-RunCollatz.tmp EID-RunCollatz.out
 
