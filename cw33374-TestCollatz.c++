@@ -100,6 +100,7 @@ TEST(CollatzFixture, cycle_5) {
   ASSERT_EQ(184, v);
 }
 
+#if CACHE_OPT
 TEST(CollatzFixture, cycle_cache_1) {
   fill_n(collatz_cache, 1000000, 0);
   cycle_length(5);
@@ -120,6 +121,7 @@ TEST(CollatzFixture, cycle_cache_2) {
   ASSERT_EQ(6, v);
   ASSERT_EQ(42, collatz_cache[1]);
 }
+#endif
 
 // -----
 // print
