@@ -46,18 +46,18 @@ TEST(CollatzFixture, read_1) {
 // ------
 
 TEST(CollatzFixture, eval_1) {
-  const int v = collatz_eval(, );
-  ASSERT_EQ( , )
+  const int v = collatz_eval(23737, 61824);
+  ASSERT_EQ(340, v);
 }
 
 TEST(CollatzFixture, eval_1) {
-  const int v = collatz_eval(, );
-  ASSERT_EQ( , )
+  const int v = collatz_eval(99476, 112058);
+  ASSERT_EQ(354 , v);
 }
 
 TEST(CollatzFixture, eval_1) {
-  const int v = collatz_eval(, );
-  ASSERT_EQ( , )
+  const int v = collatz_eval(591451, 600784);
+  ASSERT_EQ(403 , v);
 }
 // ------
 // collatz_print tests
