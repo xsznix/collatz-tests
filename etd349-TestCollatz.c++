@@ -50,12 +50,12 @@ TEST(CollatzFixture, eval_1) {
   ASSERT_EQ(340, v);
 }
 
-TEST(CollatzFixture, eval_1) {
+TEST(CollatzFixture, eval_2) {
   const int v = collatz_eval(99476, 112058);
   ASSERT_EQ(354 , v);
 }
 
-TEST(CollatzFixture, eval_1) {
+TEST(CollatzFixture, eval_3) {
   const int v = collatz_eval(591451, 600784);
   ASSERT_EQ(403 , v);
 }
@@ -63,20 +63,20 @@ TEST(CollatzFixture, eval_1) {
 // collatz_print tests
 // ------
 
-TEST(CollatzFixture, print) {
+TEST(CollatzFixture, print_1) {
     ostringstream w;
-    collatz_print(w, 1, 10, 20);
-    ASSERT_EQ("1 10 20\n", w.str());}
+    collatz_print(w, 56155, 105256, 351);
+    ASSERT_EQ("56155 105256 351\n", w.str());}
 
-TEST(CollatzFixture, print) {
+TEST(CollatzFixture, print_2) {
     ostringstream w;
-    collatz_print(w, 1, 10, 20);
-    ASSERT_EQ("1 10 20\n", w.str());}
+    collatz_print(w, 44947, 53383, 340);
+    ASSERT_EQ("44947 53383 340\n", w.str());}
 
-TEST(CollatzFixture, print) {
+TEST(CollatzFixture, print_3) {
     ostringstream w;
-    collatz_print(w, 1, 10, 20);
-    ASSERT_EQ("1 10 20\n", w.str());}
+    collatz_print(w, 73880, 12979, 340);
+    ASSERT_EQ("73880 12797 340\n", w.str());}
 
 
 // ------
