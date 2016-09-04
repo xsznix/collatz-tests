@@ -13,33 +13,33 @@ using namespace std;
 // -------
 
 TEST(CollatzFixture, read_1) {
-  istringstream r(" \n");
+  istringstream r("420 540\n");
   int i;
   int j;
   const bool b = collatz_read(r,i,j);
   ASSERT_TRUE(b);
-  ASSERT_EQ( , );
-  ASSERT_EQ( , );
+  ASSERT_EQ( 420, i);
+  ASSERT_EQ( 540, j);
 }
 
 TEST(CollatzFixture, read_1) {
-  istringstream r(" \n");
+  istringstream r("116 343\n");
   int i;
   int j;
   const bool b = collatz_read(r,i,j);
   ASSERT_FALSE(b);
-  ASSERT_EQ( , );
-  ASSERT_EQ( , );
+  ASSERT_EQ( 116, i);
+  ASSERT_EQ( 343, j);
 }
 
 TEST(CollatzFixture, read_1) {
-  istringstream r(" \n");
+  istringstream r("7890 8890\n");
   int i;
   int j;
   const bool b = collatz_read(r,i,j);
   ASSERT_TRUE(b);
-  ASSERT_EQ( , );
-  ASSERT_EQ( , );
+  ASSERT_EQ( 7890, i);
+  ASSERT_EQ( 8890, j);
 }
 // ------
 // collatz_eval tests
@@ -84,19 +84,19 @@ TEST(CollatzFixture, print_3) {
 // ------
 
 TEST(CollatzFixture, solve) {
-    istringstream r("1 10\n100 200\n201 210\n900 1000\n");
+    istringstream r("53624 80572\n323529 327284\n74717 81354\n746100 741538\n");
     ostringstream w;
     collatz_solve(r, w);
-    ASSERT_EQ("1 10 20\n100 200 125\n201 210 89\n900 1000 174\n", w.str());}
+    ASSERT_EQ("53624 80572 351\n323529 327284 384\n74717 81354 351\n746100 741538 349\n", w.str());}
 
 TEST(CollatzFixture, solve) {
-    istringstream r("1 10\n100 200\n201 210\n900 1000\n");
+    istringstream r("614069 616759\n56333 61083\n80967 96543\n72690 97427\n");
     ostringstream w;
     collatz_solve(r, w);
-    ASSERT_EQ("1 10 20\n100 200 125\n201 210 89\n900 1000 174\n", w.str());}
+    ASSERT_EQ("614069 616759 447\n56333 61083 335\n80967 96543 333\n72690 97427 351\n", w.str());}
 
 TEST(CollatzFixture, solve) {
-    istringstream r("1 10\n100 200\n201 210\n900 1000\n");
+    istringstream r("69747 108616\n421526 423698\n92166 56420\n81816 18083\n");
     ostringstream w;
     collatz_solve(r, w);
-    ASSERT_EQ("1 10 20\n100 200 125\n201 210 89\n900 1000 174\n", w.str());}
+    ASSERT_EQ("69747 108616 354\n421526 423698 418\n92166 56420 351\n81816 18083 351\n", w.str());}
