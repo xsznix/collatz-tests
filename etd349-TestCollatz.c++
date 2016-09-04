@@ -1,6 +1,14 @@
+// --------------------------------
+// projects/collatz/TestCollatz.c++
+// Copyright (C) 2016
+// Glenn P. Downing
+// --------------------------------
 
+// https://code.google.com/p/googletest/wiki/V1_7_Primer#Basic_Assertions
 
-
+// --------
+// includes
+// --------
 #include <cassert>
 #include <iostream>
 
