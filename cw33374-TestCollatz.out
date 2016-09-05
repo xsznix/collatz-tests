@@ -1,0 +1,49 @@
+Running main() from gtest_main.cc
+[==========] Running 17 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 17 tests from CollatzFixture
+[ RUN      ] CollatzFixture.read
+[       OK ] CollatzFixture.read (38 ms)
+[ RUN      ] CollatzFixture.read_stop
+[       OK ] CollatzFixture.read_stop (6 ms)
+[ RUN      ] CollatzFixture.eval_1
+[       OK ] CollatzFixture.eval_1 (7 ms)
+[ RUN      ] CollatzFixture.eval_2
+[       OK ] CollatzFixture.eval_2 (7 ms)
+[ RUN      ] CollatzFixture.eval_3
+[       OK ] CollatzFixture.eval_3 (4 ms)
+[ RUN      ] CollatzFixture.eval_4
+[       OK ] CollatzFixture.eval_4 (4 ms)
+[ RUN      ] CollatzFixture.eval_reverse
+[       OK ] CollatzFixture.eval_reverse (15 ms)
+[ RUN      ] CollatzFixture.cycle_1
+[       OK ] CollatzFixture.cycle_1 (7 ms)
+[ RUN      ] CollatzFixture.cycle_2
+[       OK ] CollatzFixture.cycle_2 (3 ms)
+[ RUN      ] CollatzFixture.cycle_3
+[       OK ] CollatzFixture.cycle_3 (3 ms)
+[ RUN      ] CollatzFixture.cycle_4
+[       OK ] CollatzFixture.cycle_4 (603 ms)
+[ RUN      ] CollatzFixture.cycle_5
+[       OK ] CollatzFixture.cycle_5 (3 ms)
+[ RUN      ] CollatzFixture.cycle_cache_1
+[       OK ] CollatzFixture.cycle_cache_1 (56 ms)
+[ RUN      ] CollatzFixture.cycle_cache_2
+[       OK ] CollatzFixture.cycle_cache_2 (55 ms)
+[ RUN      ] CollatzFixture.print
+[       OK ] CollatzFixture.print (12 ms)
+[ RUN      ] CollatzFixture.solve
+[       OK ] CollatzFixture.solve (10 ms)
+[ RUN      ] CollatzFixture.solve_empty
+[       OK ] CollatzFixture.solve_empty (6 ms)
+[----------] 17 tests from CollatzFixture (870 ms total)
+
+[----------] Global test environment tear-down
+[==========] 17 tests from 1 test case ran. (959 ms total)
+[  PASSED  ] 17 tests.
+File 'Collatz.c++'
+Lines executed:100.00% of 34
+Branches executed:100.00% of 34
+Taken at least once:76.47% of 34
+Calls executed:90.48% of 21
+Creating 'Collatz.c++.gcov'
