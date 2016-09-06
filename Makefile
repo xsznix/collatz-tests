@@ -5,3 +5,6 @@ test: $(TMPFILES)
 %.tmp: %.in %.out ../RunCollatz
 	../RunCollatz < $< > $@
 	diff $@ $(word 2,$^)
+
+clean:
+	rm *.tmp
