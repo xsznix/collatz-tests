@@ -84,6 +84,14 @@ TEST(CollatzFixture, eval_6) {
 TEST(CollatzFixture, eval_7) {
     const int v = collatz_eval(544040, 542960);
     ASSERT_EQ(359, v);}
+
+TEST(CollatzFixture, eval_8) {
+    const int v = collatz_eval(10, 10);
+    ASSERT_EQ(7, v);}
+
+TEST(CollatzFixture, eval_9) {
+    const int v = collatz_eval(50, 90000);
+    ASSERT_EQ(351, v);}
 // -----
 // print
 // -----
@@ -102,6 +110,11 @@ TEST(CollatzFixture, print_3) {
     ostringstream w;
     collatz_print(w, 10, 10, 7);
     ASSERT_EQ("10 10 7\n", w.str());}
+
+TEST(CollatzFixture, print_4) {
+    ostringstream w;
+    collatz_print(w, 10, 1, 20);
+    ASSERT_EQ("10 1 20\n", w.str());}
 // -----
 // solve
 // -----
