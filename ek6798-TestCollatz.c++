@@ -90,16 +90,16 @@ TEST(CollatzFixture, eval_4) {
     ASSERT_EQ(174, v);}
 
 TEST(CollatzFixture, eval_5) {
-    const int v = collatz_eval(999999, 836543);
-    ASSERT_EQ(525, v);}
+    const int v = collatz_eval(999168, 999168);
+    ASSERT_EQ(184, v);}
 
 TEST(CollatzFixture, eval_6) {
     const int v = collatz_eval(999, 5040);
     ASSERT_EQ(238, v);}
 
 TEST(CollatzFixture, eval_7) {
-    const int v = collatz_eval(1000, 999999);
-    ASSERT_EQ(525, v);}
+    const int v = collatz_eval(1000, 113382);
+    ASSERT_EQ(354, v);}
 
 TEST(CollatzFixture, eval_8) {
     const int v = collatz_eval(1, 1);
@@ -140,22 +140,22 @@ TEST(CollatzFixture, solve_1) {
     ASSERT_EQ("1 10 20\n100 200 125\n201 210 89\n900 1000 174\n", w.str());}
 
 TEST(CollatzFixture, solve_2) {
-    istringstream r("1 999999\n1 99999\n1 9999\n1 999\n");
+    istringstream r("999999 999999\n1 99999\n1 9999\n1 999\n");
     ostringstream w;
     collatz_solve(r, w);
-    ASSERT_EQ("1 999999 525\n1 99999 351\n1 9999 262\n1 999 179\n", w.str());}
+    ASSERT_EQ("999999 999999 259\n1 99999 351\n1 9999 262\n1 999 179\n", w.str());}
 
 TEST(CollatzFixture, solve_3) {
-    istringstream r("8675 829999\n1 1\n7 1\n867530 9\n");
+    istringstream r("8675 82999\n1 1\n7 1\n86753 9\n");
     ostringstream w;
     collatz_solve(r, w);
-    ASSERT_EQ("8675 829999 509\n1 1 1\n7 1 17\n867530 9 525\n", w.str());}
+    ASSERT_EQ("8675 82999 351\n1 1 1\n7 1 17\n86753 9 351\n", w.str());}
 
 TEST(CollatzFixture, solve_4) {
-    istringstream r("999999 1\n99999 1\n999 1\n2 1\n");
+    istringstream r("1 99999\n99999 1\n999 1\n2 1\n");
     ostringstream w;
     collatz_solve(r, w);
-    ASSERT_EQ("999999 1 525\n99999 1 351\n999 1 179\n2 1 2\n", w.str());}
+    ASSERT_EQ("1 99999 351\n99999 1 351\n999 1 179\n2 1 2\n", w.str());}
 
 TEST(CollatzFixture, solve_5) {
     istringstream r("\n");
