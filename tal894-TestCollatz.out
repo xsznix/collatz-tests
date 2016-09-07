@@ -1,0 +1,65 @@
+==750== Memcheck, a memory error detector
+==750== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==750== Using Valgrind-3.10.0 and LibVEX; rerun with -h for copyright info
+==750== Command: ./TestCollatz
+==750==
+Running main() from gtest_main.cc
+[==========] Running 15 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 15 tests from CollatzFixture
+[ RUN      ] CollatzFixture.read_1
+[       OK ] CollatzFixture.read_1 (22 ms)
+[ RUN      ] CollatzFixture.read_2
+[       OK ] CollatzFixture.read_2 (4 ms)
+[ RUN      ] CollatzFixture.eval_1
+[       OK ] CollatzFixture.eval_1 (22 ms)
+[ RUN      ] CollatzFixture.eval_2
+[       OK ] CollatzFixture.eval_2 (7 ms)
+[ RUN      ] CollatzFixture.eval_3
+[       OK ] CollatzFixture.eval_3 (2 ms)
+[ RUN      ] CollatzFixture.eval_4
+[       OK ] CollatzFixture.eval_4 (10 ms)
+[ RUN      ] CollatzFixture.eval_5
+[       OK ] CollatzFixture.eval_5 (3 ms)
+[ RUN      ] CollatzFixture.eval_6
+[       OK ] CollatzFixture.eval_6 (2 ms)
+[ RUN      ] CollatzFixture.eval_7
+[       OK ] CollatzFixture.eval_7 (663 ms)
+[ RUN      ] CollatzFixture.eval_8
+[       OK ] CollatzFixture.eval_8 (582 ms)
+[ RUN      ] CollatzFixture.eval_9
+[       OK ] CollatzFixture.eval_9 (666 ms)
+[ RUN      ] CollatzFixture.print_1
+[       OK ] CollatzFixture.print_1 (9 ms)
+[ RUN      ] CollatzFixture.print_2
+[       OK ] CollatzFixture.print_2 (3 ms)
+[ RUN      ] CollatzFixture.solve_1
+[       OK ] CollatzFixture.solve_1 (8 ms)
+[ RUN      ] CollatzFixture.solve_2
+[       OK ] CollatzFixture.solve_2 (15 ms)
+[----------] 15 tests from CollatzFixture (2032 ms total)
+
+[----------] Global test environment tear-down
+[==========] 15 tests from 1 test case ran. (2091 ms total)
+[  PASSED  ] 15 tests.
+==750==
+==750== HEAP SUMMARY:
+==750==     in use at exit: 72,704 bytes in 1 blocks
+==750==   total heap usage: 81,313 allocs, 81,312 frees, 6,609,827 bytes allocated
+==750==
+==750== LEAK SUMMARY:
+==750==    definitely lost: 0 bytes in 0 blocks
+==750==    indirectly lost: 0 bytes in 0 blocks
+==750==      possibly lost: 0 bytes in 0 blocks
+==750==    still reachable: 72,704 bytes in 1 blocks
+==750==         suppressed: 0 bytes in 0 blocks
+==750== Rerun with --leak-check=full to see details of leaked memory
+==750==
+==750== For counts of detected and suppressed errors, rerun with: -v
+==750== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+File 'Collatz.c++'
+Lines executed:98.04% of 51
+Branches executed:100.00% of 58
+Taken at least once:75.86% of 58
+Calls executed:96.67% of 30
+Creating 'Collatz.c++.gcov'
