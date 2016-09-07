@@ -1,0 +1,157 @@
+// --------------------------------
+// projects/collatz/TestCollatz.c++
+// Copyright (C) 2016
+// Glenn P. Downing
+// --------------------------------
+
+// https://code.google.com/p/googletest/wiki/V1_7_Primer#Basic_Assertions
+
+// --------
+// includes
+// --------
+
+#include <iostream> // cout, endl
+#include <sstream>  // istringtstream, ostringstream
+#include <string>   // string
+#include <utility>  // pair
+
+#include "gtest/gtest.h"
+
+#include "Collatz.h"
+
+using namespace std;
+
+// ----
+// read
+// ----
+
+TEST(CollatzFixture, read_1) {
+    istringstream r("1 10\n");
+    int           i;
+    int           j;
+    const bool b = collatz_read(r, i, j);
+    ASSERT_TRUE(b);
+    ASSERT_EQ( 1, i);
+    ASSERT_EQ(10, j);}
+
+TEST(CollatzFixture, read_2) {
+    istringstream r("10 1\n");
+    int           i;
+    int           j;
+    const bool b = collatz_read(r, i, j);
+    ASSERT_TRUE(b);
+    ASSERT_EQ(10, i);
+    ASSERT_EQ(1, j);}
+
+TEST(CollatzFixture, read_3) {
+    istringstream r("-1000 -100\n");
+    int           i;
+    int           j;
+    const bool b = collatz_read(r, i, j);
+    ASSERT_TRUE(b);
+    ASSERT_EQ(-1000, i);
+    ASSERT_EQ(-100, j);}
+
+
+// ----
+// eval
+// ----
+
+TEST(CollatzFixture, eval_1) {
+    const int v = collatz_eval(1, 10);
+    ASSERT_EQ(20, v);}
+
+TEST(CollatzFixture, eval_2) {
+    const int v = collatz_eval(100, 200);
+    ASSERT_EQ(125, v);}
+
+TEST(CollatzFixture, eval_3) {
+    const int v = collatz_eval(201, 210);
+    ASSERT_EQ(89, v);}
+
+TEST(CollatzFixture, eval_4) {
+    const int v = collatz_eval(900, 1000);
+    ASSERT_EQ(174, v);}
+
+// -------------
+// compute_cycle
+// -------------
+
+TEST(CollatzFixture, compute_cycle_1) {
+	int n = 1;
+	int cycle_length = compute_cycle(n);
+	ASSERT_EQ(cycle_length,1);}
+
+TEST(CollatzFixture, compute_cycle_2) {
+	int n = 5;
+	int cycle_length = compute_cycle(n);
+	ASSERT_EQ(cycle_length,6);}
+
+TEST(CollatzFixture, compute_cycle_3) {
+    int n = 100;
+    int cycle_length = compute_cycle(n);
+    ASSERT_EQ(cycle_length,26);}
+
+TEST(CollatzFixture, max_1) {
+	int a = 0;
+	int b = 0;
+	int max_num = max(a, b);
+	ASSERT_EQ(max_num, 0);}
+
+TEST(CollatzFixture, max_2) {
+    int a = -5;
+    int b = -2;
+    int max_num = max(a, b);
+    ASSERT_EQ(max_num, -2);}
+
+TEST(CollatzFixture, max_3) {
+    int a = 1000;
+    int b = 999;
+    int max_num = max(a, b);
+    ASSERT_EQ(max_num, 1000);}
+
+
+
+
+// -----
+// print
+// -----
+
+TEST(CollatzFixture, print_1) {
+    ostringstream w;
+    collatz_print(w, 1, 10, 20);
+    ASSERT_EQ("1 10 20\n", w.str());}
+
+TEST(CollatzFixture, print_2) {
+    ostringstream w;
+    collatz_print(w, 100, 200, 175);
+    ASSERT_EQ("100 200 175\n", w.str());}
+
+TEST(CollatzFixture, print_3) {
+    ostringstream w;
+    collatz_print(w, 201, 210, 89);
+    ASSERT_EQ("201 210 89\n", w.str());}
+
+
+
+// -----
+// solve
+// -----
+
+TEST(CollatzFixture, solve_1) {
+    istringstream r("1 10\n100 200\n201 210\n900 1000\n");
+    ostringstream w;
+    collatz_solve(r, w);
+    ASSERT_EQ("1 10 20\n100 200 125\n201 210 89\n900 1000 174\n", w.str());}
+
+TEST(CollatzFixture, solve_2) {
+    istringstream r("231 234\n345 456\n456 567\n657 678\n");
+    ostringstream w;
+    collatz_solve(r, w);
+    ASSERT_EQ("231 234 128\n345 456 134\n456 567 142\n657 678 145\n", w.str());}
+
+TEST(CollatzFixture, solve_3) {
+    istringstream r("1 1\n2 2\n3 3\n4 4\n");
+    ostringstream w;
+    collatz_solve(r, w);
+    ASSERT_EQ("1 1 1\n2 2 2\n3 3 8\n4 4 3\n", w.str());}
