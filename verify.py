@@ -80,11 +80,6 @@ for filename in (f[0:-3] for f in filter(is_valid_file, os.listdir(CURRENT_DIREC
     
     # If asked to, run the test.
     if RUN_TESTS:
-        try:
-            os.remove("{f}.tmp")
-        except OSError as e:
-            if e.errno != errno.ENOENT:
-                raise
         p = subprocess.Popen("../RunCollatz < {f}.in > {f}.tmp && diff {f}.tmp {f}.out".format(f=filename), 
             stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         stdout, stderr = p.communicate()
