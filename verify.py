@@ -33,13 +33,16 @@ for filename in (f[0:-3] for f in filter(is_valid_file, os.listdir(CURRENT_DIREC
     with open(in_filename, 'r') as in_file:
         # Ignore lines that don't match predicted input
         for lineno, line in enumerate(l for l in in_file.readlines() if re.match("\d+\s\d+", l)):
-            if not re.match("\d+\s\d+", line):
-                if line == "":
-                    continue
-                else:
-                    print ("{f}.in:{l}: Invalid line contents \"{c}\"".format(f=filename, l=lineno, c=line))
-                    continue
-            i, j = map(lambda x: int(x), line.split(' '))
+            if re.match("^\s*$", line):
+                continue
+
+            matches = re.search("^\s*([0-9]+)\s+([0-9]+)\s*$", line)
+            if matches is None:
+                print ("{f}.in:{l}: Inavalid line contents \"{c}\"".format(f=filename, l=lineno, c=line))
+                continue
+
+            i = int(matches.group(1))
+            j = int(matches.group(2))
 
             # Need to swap for algorithm to work
             if i > j:
@@ -49,8 +52,10 @@ for filename in (f[0:-3] for f in filter(is_valid_file, os.listdir(CURRENT_DIREC
 
             if i < 1:
                 print("{f}.in:{l}: Low end of range is too low ({i})".format(f=filename, l=lineno, i=i))
+                continue
             if j > 999999:
                 print("{f}.in:{l}: High end of range is too high ({j})".format(f=filename, l=lineno, j=j))
+                continue
 
             # Test is invalid if any number in the range [i, j] causes overflow of 32bit integers
             if any((num >= i and num <= j for num in OVERFLOW_INPUTS)):
