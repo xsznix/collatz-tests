@@ -60,7 +60,7 @@ TEST(CollatzFixture, eval_4) {
 }
 
 TEST(CollatzFixture, eval_5) {
-  const int v = collatz_eval(1, 10);
+  const int v = collatz_eval(10, 1);
   ASSERT_EQ(20, v);
 }
 
@@ -70,9 +70,68 @@ TEST(CollatzFixture, eval_6) {
 }
 
 TEST(CollatzFixture, eval_7) {
-  const int v = collatz_eval(1, 999999);
+  const int v = collatz_eval(816453, 884360);
   ASSERT_EQ(525, v);
 }
+
+// ----
+// cached_eval
+// ----
+
+TEST(CollatzFixture, cached_eval_1) {
+  const int v = opt_collatz_eval(1, 10);
+  ASSERT_EQ(20, v);
+}
+
+TEST(CollatzFixture, cached_eval_2) {
+  const int v = opt_collatz_eval(100, 200);
+  ASSERT_EQ(125, v);
+}
+
+TEST(CollatzFixture, cached_eval_3) {
+  const int v = opt_collatz_eval(201, 210);
+  ASSERT_EQ(89, v);
+}
+
+TEST(CollatzFixture, cached_eval_4) {
+  const int v = opt_collatz_eval(900, 1000);
+  ASSERT_EQ(174, v);
+}
+
+TEST(CollatzFixture, cached_eval_5) {
+  const int v = opt_collatz_eval(10, 1);
+  ASSERT_EQ(20, v);
+}
+
+TEST(CollatzFixture, cached_eval_6) {
+  const int v = opt_collatz_eval(2, 2);
+  ASSERT_EQ(2, v);
+}
+
+TEST(CollatzFixture, cached_eval_7) {
+  const int v = opt_collatz_eval(816453, 884360);
+  ASSERT_EQ(525, v);
+}
+
+// -----
+// helper
+// -----
+
+TEST(CollatzFixture, helper_eval_1) {
+  const int v = collatz_helper(9);
+  ASSERT_EQ(20, v);
+}
+
+TEST(CollatzFixture, helper_eval_2) {
+  const int v = collatz_helper(42);
+  ASSERT_EQ(9, v);
+}
+
+TEST(CollatzFixture, helper_eval_3) {
+  const int v = collatz_helper(884360);
+  ASSERT_EQ(127, v);
+}
+
 // -----
 // print
 // -----
