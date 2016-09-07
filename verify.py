@@ -47,6 +47,11 @@ for filename in (f[0:-3] for f in filter(is_valid_file, os.listdir(CURRENT_DIREC
                 i = j
                 j = temp
 
+            if i < 1:
+                print("{f}.in:{l}: Low end of range is too low ({i})".format(f=filename, l=lineno, i=i))
+            if j > 999999:
+                print("{f}.in:{l}: High end of range is too high ({j})".format(f=filename, l=lineno, j=j))
+
             # Test is invalid if any number in the range [i, j] causes overflow of 32bit integers
             if any((num >= i and num <= j for num in OVERFLOW_INPUTS)):
                 if RUN_TESTS:
