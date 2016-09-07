@@ -1,50 +1,69 @@
-==14942== Memcheck, a memory error detector
-==14942== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==14942== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==14942== Command: ./TestCollatz
-==14942==
---14942-- run: /usr/bin/dsymutil "./TestCollatz"
+==55== Memcheck, a memory error detector
+==55== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==55== Using Valgrind-3.10.0 and LibVEX; rerun with -h for copyright info
+==55== Command: ./TestCollatz
+==55== 
 Running main() from gtest_main.cc
-[==========] Running 7 tests from 1 test case.
+[==========] Running 17 tests from 1 test case.
 [----------] Global test environment set-up.
-[----------] 7 tests from CollatzFixture
-[ RUN      ] CollatzFixture.read
-[       OK ] CollatzFixture.read (29 ms)
+[----------] 17 tests from CollatzFixture
+[ RUN      ] CollatzFixture.read_1
+[       OK ] CollatzFixture.read_1 (26 ms)
+[ RUN      ] CollatzFixture.read_2
+[       OK ] CollatzFixture.read_2 (5 ms)
+[ RUN      ] CollatzFixture.read_3
+[       OK ] CollatzFixture.read_3 (5 ms)
+[ RUN      ] CollatzFixture.read_4
+[       OK ] CollatzFixture.read_4 (4 ms)
 [ RUN      ] CollatzFixture.eval_1
-[       OK ] CollatzFixture.eval_1 (3 ms)
+[       OK ] CollatzFixture.eval_1 (73 ms)
 [ RUN      ] CollatzFixture.eval_2
-[       OK ] CollatzFixture.eval_2 (2 ms)
+[       OK ] CollatzFixture.eval_2 (37 ms)
 [ RUN      ] CollatzFixture.eval_3
-[       OK ] CollatzFixture.eval_3 (2 ms)
+[       OK ] CollatzFixture.eval_3 (4 ms)
 [ RUN      ] CollatzFixture.eval_4
-[       OK ] CollatzFixture.eval_4 (2 ms)
-[ RUN      ] CollatzFixture.print
-[       OK ] CollatzFixture.print (11 ms)
-[ RUN      ] CollatzFixture.solve
-[       OK ] CollatzFixture.solve (16 ms)
-[----------] 7 tests from CollatzFixture (76 ms total)
+[       OK ] CollatzFixture.eval_4 (74 ms)
+[ RUN      ] CollatzFixture.eval_5
+[       OK ] CollatzFixture.eval_5 (687 ms)
+[ RUN      ] CollatzFixture.print_1
+[       OK ] CollatzFixture.print_1 (8 ms)
+[ RUN      ] CollatzFixture.print_2
+[       OK ] CollatzFixture.print_2 (4 ms)
+[ RUN      ] CollatzFixture.print_3
+[       OK ] CollatzFixture.print_3 (4 ms)
+[ RUN      ] CollatzFixture.print_4
+[       OK ] CollatzFixture.print_4 (3 ms)
+[ RUN      ] CollatzFixture.solve_1
+[       OK ] CollatzFixture.solve_1 (38 ms)
+[ RUN      ] CollatzFixture.solve_2
+[       OK ] CollatzFixture.solve_2 (847 ms)
+[ RUN      ] CollatzFixture.solve_3
+[       OK ] CollatzFixture.solve_3 (62 ms)
+[ RUN      ] CollatzFixture.solve_4
+[       OK ] CollatzFixture.solve_4 (199 ms)
+[----------] 17 tests from CollatzFixture (2106 ms total)
 
 [----------] Global test environment tear-down
-[==========] 7 tests from 1 test case ran. (116 ms total)
-[  PASSED  ] 7 tests.
-==14942==
-==14942== HEAP SUMMARY:
-==14942==     in use at exit: 26,418 bytes in 193 blocks
-==14942==   total heap usage: 416 allocs, 223 frees, 322,756 bytes allocated
-==14942==
-==14942== LEAK SUMMARY:
-==14942==    definitely lost: 0 bytes in 0 blocks
-==14942==    indirectly lost: 0 bytes in 0 blocks
-==14942==      possibly lost: 2,064 bytes in 1 blocks
-==14942==    still reachable: 0 bytes in 0 blocks
-==14942==         suppressed: 24,354 bytes in 192 blocks
-==14942== Rerun with --leak-check=full to see details of leaked memory
-==14942==
-==14942== For counts of detected and suppressed errors, rerun with: -v
-==14942== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+[==========] 17 tests from 1 test case ran. (2169 ms total)
+[  PASSED  ] 17 tests.
+==55== 
+==55== HEAP SUMMARY:
+==55==     in use at exit: 72,704 bytes in 1 blocks
+==55==   total heap usage: 36,730 allocs, 36,729 frees, 8,661,598 bytes allocated
+==55== 
+==55== LEAK SUMMARY:
+==55==    definitely lost: 0 bytes in 0 blocks
+==55==    indirectly lost: 0 bytes in 0 blocks
+==55==      possibly lost: 0 bytes in 0 blocks
+==55==    still reachable: 72,704 bytes in 1 blocks
+==55==         suppressed: 0 bytes in 0 blocks
+==55== Rerun with --leak-check=full to see details of leaked memory
+==55== 
+==55== For counts of detected and suppressed errors, rerun with: -v
+==55== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 File 'Collatz.c++'
-Lines executed:100.00% of 9
-Branches executed:100.00% of 4
-Taken at least once:100.00% of 4
-No calls
-Collatz.c++:creating 'Collatz.c++.gcov'
+Lines executed:100.00% of 55
+Branches executed:100.00% of 48
+Taken at least once:72.92% of 48
+Calls executed:93.33% of 30
+Creating 'Collatz.c++.gcov'
