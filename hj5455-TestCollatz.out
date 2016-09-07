@@ -1,0 +1,50 @@
+==13128== Memcheck, a memory error detector
+==13128== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==13128== Using Valgrind-3.10.1 and LibVEX; rerun with -h for copyright info
+==13128== Command: ./TestCollatz
+==13128== 
+Running main() from gtest_main.cc
+[==========] Running 16 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 16 tests from CollatzFixture
+[ RUN      ] CollatzFixture.read
+[       OK ] CollatzFixture.read (17 ms)
+[ RUN      ] CollatzFixture.eval_1
+[       OK ] CollatzFixture.eval_1 (28 ms)
+[ RUN      ] CollatzFixture.eval_2
+[       OK ] CollatzFixture.eval_2 (18 ms)
+[ RUN      ] CollatzFixture.eval_3
+[       OK ] CollatzFixture.eval_3 (2 ms)
+[ RUN      ] CollatzFixture.eval_4
+[       OK ] CollatzFixture.eval_4 (26 ms)
+[ RUN      ] CollatzFixture.eval_5
+[       OK ] CollatzFixture.eval_5 (4 ms)
+[ RUN      ] CollatzFixture.eval_6
+[       OK ] CollatzFixture.eval_6 (2 ms)
+[ RUN      ] CollatzFixture.eval_7
+[       OK ] CollatzFixture.eval_7 (348 ms)
+[ RUN      ] CollatzFixture.calc
+[       OK ] CollatzFixture.calc (2 ms)
+[ RUN      ] CollatzFixture.calc_1
+[       OK ] CollatzFixture.calc_1 (1 ms)
+[ RUN      ] CollatzFixture.calc_2
+[       OK ] CollatzFixture.calc_2 (2 ms)
+[ RUN      ] CollatzFixture.calc_map_1
+[       OK ] CollatzFixture.calc_map_1 (2 ms)
+[ RUN      ] CollatzFixture.calc_map_2
+[       OK ] CollatzFixture.calc_map_2 (1 ms)
+[ RUN      ] CollatzFixture.calc_map_3
+[       OK ] CollatzFixture.calc_map_3 (2 ms)
+[ RUN      ] CollatzFixture.print
+[       OK ] CollatzFixture.print (6 ms)
+[ RUN      ] CollatzFixture.solve
+[       OK ] CollatzFixture.solve (7 ms)
+[----------] 16 tests from CollatzFixture (476 ms total)
+
+[----------] Global test environment tear-down
+[==========] 16 tests from 1 test case ran. (504 ms total)
+[  PASSED  ] 16 tests.
+==13128== 
+==13128== HEAP SUMMARY:
+==13128==     in use at exit: 0 bytes in 0 blocks
+==13128==   total heap usage: 11,388 allocs, 11,388 frees, 482,992 bytes allocated
