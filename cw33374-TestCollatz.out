@@ -3,43 +3,43 @@ Running main() from gtest_main.cc
 [----------] Global test environment set-up.
 [----------] 17 tests from CollatzFixture
 [ RUN      ] CollatzFixture.read
-[       OK ] CollatzFixture.read (38 ms)
+[       OK ] CollatzFixture.read (39 ms)
 [ RUN      ] CollatzFixture.read_stop
-[       OK ] CollatzFixture.read_stop (6 ms)
+[       OK ] CollatzFixture.read_stop (8 ms)
 [ RUN      ] CollatzFixture.eval_1
-[       OK ] CollatzFixture.eval_1 (7 ms)
+[       OK ] CollatzFixture.eval_1 (9 ms)
 [ RUN      ] CollatzFixture.eval_2
-[       OK ] CollatzFixture.eval_2 (7 ms)
+[       OK ] CollatzFixture.eval_2 (4 ms)
 [ RUN      ] CollatzFixture.eval_3
-[       OK ] CollatzFixture.eval_3 (4 ms)
+[       OK ] CollatzFixture.eval_3 (3 ms)
 [ RUN      ] CollatzFixture.eval_4
 [       OK ] CollatzFixture.eval_4 (4 ms)
 [ RUN      ] CollatzFixture.eval_reverse
-[       OK ] CollatzFixture.eval_reverse (15 ms)
+[       OK ] CollatzFixture.eval_reverse (5 ms)
 [ RUN      ] CollatzFixture.cycle_1
-[       OK ] CollatzFixture.cycle_1 (7 ms)
+[       OK ] CollatzFixture.cycle_1 (3 ms)
 [ RUN      ] CollatzFixture.cycle_2
-[       OK ] CollatzFixture.cycle_2 (3 ms)
+[       OK ] CollatzFixture.cycle_2 (4 ms)
 [ RUN      ] CollatzFixture.cycle_3
-[       OK ] CollatzFixture.cycle_3 (3 ms)
+[       OK ] CollatzFixture.cycle_3 (5 ms)
 [ RUN      ] CollatzFixture.cycle_4
-[       OK ] CollatzFixture.cycle_4 (603 ms)
+[       OK ] CollatzFixture.cycle_4 (689 ms)
 [ RUN      ] CollatzFixture.cycle_5
-[       OK ] CollatzFixture.cycle_5 (3 ms)
+[       OK ] CollatzFixture.cycle_5 (5 ms)
 [ RUN      ] CollatzFixture.cycle_cache_1
-[       OK ] CollatzFixture.cycle_cache_1 (56 ms)
+[       OK ] CollatzFixture.cycle_cache_1 (67 ms)
 [ RUN      ] CollatzFixture.cycle_cache_2
-[       OK ] CollatzFixture.cycle_cache_2 (55 ms)
+[       OK ] CollatzFixture.cycle_cache_2 (52 ms)
 [ RUN      ] CollatzFixture.print
-[       OK ] CollatzFixture.print (12 ms)
+[       OK ] CollatzFixture.print (11 ms)
 [ RUN      ] CollatzFixture.solve
-[       OK ] CollatzFixture.solve (10 ms)
+[       OK ] CollatzFixture.solve (21 ms)
 [ RUN      ] CollatzFixture.solve_empty
-[       OK ] CollatzFixture.solve_empty (6 ms)
-[----------] 17 tests from CollatzFixture (870 ms total)
+[       OK ] CollatzFixture.solve_empty (13 ms)
+[----------] 17 tests from CollatzFixture (965 ms total)
 
 [----------] Global test environment tear-down
-[==========] 17 tests from 1 test case ran. (959 ms total)
+[==========] 17 tests from 1 test case ran. (1069 ms total)
 [  PASSED  ] 17 tests.
 File 'Collatz.c++'
 Lines executed:100.00% of 34
