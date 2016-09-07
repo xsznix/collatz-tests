@@ -19,8 +19,8 @@
 
 using namespace std;
 
-// ----
-// read
+// ----------
+// read tests
 // ----
 
 TEST(CollatzFixture, read_1) {
@@ -31,6 +31,7 @@ TEST(CollatzFixture, read_1) {
     ASSERT_TRUE(b);
     ASSERT_EQ( 1, i);
     ASSERT_EQ(10, j);}
+
 TEST(CollatzFixture, read_2) { istringstream r("109 999999\n");
     int           i;
     int           j;
@@ -44,32 +45,32 @@ TEST(CollatzFixture, read_2) { istringstream r("109 999999\n");
 // ----
 
 TEST(CollatzFixture, eval_1) {
-    const int v = collatz_eval(1, 10);
-    ASSERT_EQ(20, v);} 
+    const int v = collatz_eval(6996, 7281);
+    ASSERT_EQ(195, v);} 
 
 TEST(CollatzFixture, eval_2) {
-    const int v = collatz_eval(1, 999999);
-    ASSERT_EQ(525, v);}
+    const int v = collatz_eval(9383, 886);
+    ASSERT_EQ(262, v);}
 
 TEST(CollatzFixture, eval_3) {
-    const int v = collatz_eval(999999, 1);
-    ASSERT_EQ(525, v);}
+    const int v = collatz_eval(540, 3426);
+    ASSERT_EQ(217, v);}
 
 TEST(CollatzFixture, eval_4) {
-    const int v = collatz_eval(900, 1000);
-    ASSERT_EQ(174, v);}
+    const int v = collatz_eval(3346, 4302);
+    ASSERT_EQ(238, v);}
 
 TEST(CollatzFixture, eval_5) {
-    const int v = collatz_eval(21539, 465782);
-    ASSERT_EQ(449, v);}
+    const int v = collatz_eval(17630, 104812);
+    ASSERT_EQ(351, v);}
 
 TEST(CollatzFixture, eval_6) {
-    const int v = collatz_eval(942590, 280524);
-    ASSERT_EQ(525, v);}
+    const int v = collatz_eval(34307, 4251);
+    ASSERT_EQ(311, v);}
 
 TEST(CollatzFixture, eval_7) {
-    const int v = collatz_eval(614769, 160379);
-    ASSERT_EQ(470, v);}
+    const int v = collatz_eval(345318, 356264);
+    ASSERT_EQ(441, v);}
 
 // -----
 // print
