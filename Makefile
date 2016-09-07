@@ -6,5 +6,10 @@ test: $(TMPFILES)
 	../RunCollatz < $< > $@
 	diff $@ $(word 2,$^)
 
+.PHONY: clean
 clean:
 	rm *.tmp
+
+.PHONY: check
+check:
+	python verify.py
