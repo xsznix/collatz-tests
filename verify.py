@@ -82,16 +82,16 @@ for filename in (f[0:-3] for f in filter(is_valid_file, os.listdir(CURRENT_DIREC
                     test_is_invalid = True
                 else:
                     found_invalid_file = True
-    
-    # If asked to, run the test.
-    if RUN_TESTS:
-        p = subprocess.Popen("../RunCollatz < {f}.in > {f}.tmp && diff {f}.tmp {f}.out".format(f=filename), 
-            stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
-        stdout, stderr = p.communicate()
+        else:
+            # If asked to, run the test.
+            if RUN_TESTS and not test_is_invalid:
+                p = subprocess.Popen("../RunCollatz < {f}.in > {f}.tmp && diff {f}.tmp {f}.out".format(f=filename), 
+                    stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+                stdout, stderr = p.communicate()
 
-        if p.returncode != 0:
-            print("{f}.in: exited with status {c}".format(f=filename, c=p.returncode))
-            found_invalid_file = True
+                if p.returncode != 0:
+                    print("{f}.in: exited with status {c}".format(f=filename, c=p.returncode))
+                    found_invalid_file = True
 
 if found_invalid_file:
     sys.exit(1)
