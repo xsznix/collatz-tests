@@ -56,6 +56,7 @@ for filename in (f[0:-3] for f in filter(is_valid_file, os.listdir(CURRENT_DIREC
             if any((num >= i and num <= j for num in OVERFLOW_INPUTS)):
                 if RUN_TESTS:
                     print ("{f}.in: Contains invalid range, will skip testing".format(f=filename))
+                    break
                 elif VERBOSE:
                     overflow_candidates = [num for num in OVERFLOW_INPUTS if num >= i and num <= j]
                     for candidate in overflow_candidates:
@@ -76,7 +77,6 @@ for filename in (f[0:-3] for f in filter(is_valid_file, os.listdir(CURRENT_DIREC
                     test_is_invalid = True
                 else:
                     found_invalid_file = True
-                break
     
     # If asked to, run the test.
     if RUN_TESTS:
