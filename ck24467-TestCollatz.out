@@ -1,0 +1,75 @@
+==1415== Memcheck, a memory error detector
+==1415== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==1415== Using Valgrind-3.10.0 and LibVEX; rerun with -h for copyright info
+==1415== Command: ./TestCollatz
+==1415== 
+Running main() from gtest_main.cc
+[==========] Running 20 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 20 tests from CollatzFixture
+[ RUN      ] CollatzFixture.read
+[       OK ] CollatzFixture.read (22 ms)
+[ RUN      ] CollatzFixture.eval_1
+[       OK ] CollatzFixture.eval_1 (3 ms)
+[ RUN      ] CollatzFixture.eval_2
+[       OK ] CollatzFixture.eval_2 (2 ms)
+[ RUN      ] CollatzFixture.eval_3
+[       OK ] CollatzFixture.eval_3 (2 ms)
+[ RUN      ] CollatzFixture.eval_4
+[       OK ] CollatzFixture.eval_4 (2 ms)
+[ RUN      ] CollatzFixture.eval_5
+[       OK ] CollatzFixture.eval_5 (2 ms)
+[ RUN      ] CollatzFixture.eval_6
+[       OK ] CollatzFixture.eval_6 (2 ms)
+[ RUN      ] CollatzFixture.eval_7
+[       OK ] CollatzFixture.eval_7 (1163 ms)
+[ RUN      ] CollatzFixture.eval_8
+[       OK ] CollatzFixture.eval_8 (3 ms)
+[ RUN      ] CollatzFixture.switch_1
+[       OK ] CollatzFixture.switch_1 (3 ms)
+[ RUN      ] CollatzFixture.switch_2
+[       OK ] CollatzFixture.switch_2 (3 ms)
+[ RUN      ] CollatzFixture.switch_3
+[       OK ] CollatzFixture.switch_3 (2 ms)
+[ RUN      ] CollatzFixture.switch_4
+[       OK ] CollatzFixture.switch_4 (2 ms)
+[ RUN      ] CollatzFixture.cycle_count_1
+[       OK ] CollatzFixture.cycle_count_1 (2 ms)
+[ RUN      ] CollatzFixture.cycle_count_2
+[       OK ] CollatzFixture.cycle_count_2 (2 ms)
+[ RUN      ] CollatzFixture.cycle_count_3
+[       OK ] CollatzFixture.cycle_count_3 (2 ms)
+[ RUN      ] CollatzFixture.cycle_count_4
+[       OK ] CollatzFixture.cycle_count_4 (3 ms)
+[ RUN      ] CollatzFixture.cycle_count_5
+[       OK ] CollatzFixture.cycle_count_5 (2 ms)
+[ RUN      ] CollatzFixture.print
+[       OK ] CollatzFixture.print (8 ms)
+[ RUN      ] CollatzFixture.solve
+[       OK ] CollatzFixture.solve (7 ms)
+[----------] 20 tests from CollatzFixture (1271 ms total)
+
+[----------] Global test environment tear-down
+[==========] 20 tests from 1 test case ran. (1328 ms total)
+[  PASSED  ] 20 tests.
+==1415== 
+==1415== HEAP SUMMARY:
+==1415==     in use at exit: 72,704 bytes in 1 blocks
+==1415==   total heap usage: 306 allocs, 305 frees, 144,196 bytes allocated
+==1415== 
+==1415== LEAK SUMMARY:
+==1415==    definitely lost: 0 bytes in 0 blocks
+==1415==    indirectly lost: 0 bytes in 0 blocks
+==1415==      possibly lost: 0 bytes in 0 blocks
+==1415==    still reachable: 72,704 bytes in 1 blocks
+==1415==         suppressed: 0 bytes in 0 blocks
+==1415== Rerun with --leak-check=full to see details of leaked memory
+==1415== 
+==1415== For counts of detected and suppressed errors, rerun with: -v
+==1415== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+File 'Collatz.c++'
+Lines executed:100.00% of 35
+Branches executed:100.00% of 22
+Taken at least once:81.82% of 22
+Calls executed:100.00% of 15
+Creating 'Collatz.c++.gcov'
