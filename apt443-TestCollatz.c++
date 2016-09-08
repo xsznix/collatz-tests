@@ -69,7 +69,7 @@ TEST(CollatzFixture, eval_6){
 
 TEST(CollatzFixture, cycle_1) {
     const int v = collatz_cycle(1);
-    ASSERT_EQ(0, v);}
+    ASSERT_EQ(1, v);}
 
 TEST(CollatzFixture, cycle_2) {
     const int v = collatz_cycle(9);
