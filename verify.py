@@ -38,7 +38,12 @@ for filename in (f[0:-3] for f in filter(is_valid_file, os.listdir(CURRENT_DIREC
 
             matches = re.search("^\s*([0-9]+)\s+([0-9]+)\s*$", line)
             if matches is None:
-                print ("{f}.in:{l}: Inavalid line contents \"{c}\"".format(f=filename, l=lineno, c=line))
+                if RUN_TESTS:
+                    print ("{f}.in:{l}: Inavalid line contents \"{c}\", will skip testing".format(f=filename, l=lineno, c=line))
+                    test_is_invalid = True
+                else:
+                    print ("{f}.in:{l}: Inavalid line contents \"{c}\"".format(f=filename, l=lineno, c=line))
+                    found_invalid_file = True
                 continue
 
             i = int(matches.group(1))
@@ -51,10 +56,20 @@ for filename in (f[0:-3] for f in filter(is_valid_file, os.listdir(CURRENT_DIREC
                 j = temp
 
             if i < 1:
-                print("{f}.in:{l}: Low end of range is too low ({i})".format(f=filename, l=lineno, i=i))
+                if RUN_TESTS:
+                    print("{f}.in:{l}: Low end of range is too low ({i}), will skip testing".format(f=filename, l=lineno, i=i))
+                    test_is_invalid = True
+                else:
+                    print("{f}.in:{l}: Low end of range is too low ({i})".format(f=filename, l=lineno, i=i))
+                    found_invalid_file = True
                 continue
             if j > 999999:
-                print("{f}.in:{l}: High end of range is too high ({j})".format(f=filename, l=lineno, j=j))
+                if RUN_TESTS:
+                    print("{f}.in:{l}: High end of range is too high ({j}), will skip testing".format(f=filename, l=lineno, j=j))
+                    test_is_invalid = True
+                else:
+                    print("{f}.in:{l}: High end of range is too high ({j})".format(f=filename, l=lineno, j=j))
+                    found_invalid_file = True
                 continue
 
             # Test is invalid if any number in the range [i, j] causes overflow of 32bit integers
